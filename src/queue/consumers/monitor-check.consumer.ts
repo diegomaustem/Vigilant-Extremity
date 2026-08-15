@@ -34,8 +34,6 @@ export class MonitorCheckConsumer {
 
           if (result.wasChecked) {
             console.log(chalk.green(`Monitor ${monitorId} verificado com sucesso.`));
-          } else {
-            console.log(chalk.gray(`Monitor ${monitorId} já foi verificado recentemente.`));
           }
 
         } catch (error: any) {
