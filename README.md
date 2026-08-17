@@ -35,3 +35,12 @@ docker-compose -f docker/docker-compose.yml ps
 │  ✅ Calcula quantos workers são necessários                                           │
 │  ✅ Escala workers automaticamente                                                   │
 │  ✅ Reduz workers quando a demanda diminui 
+
+
+
+O QUE CADA WORKER FAZ?
+Worker	Função	O que faz
+Worker 1 (API)	Scheduler + Consumer	Agenda verificações E processa
+Worker 2	Consumer	Apenas processa verificações
+Worker 3	Consumer	Apenas processa verificações
+Worker N	Consumer	Apenas processa verificações
