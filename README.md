@@ -11,4 +11,15 @@
     └── 100+ mensagens   → 20 workers
 
 3. AÇÃO (Escala)                                
-    └── docker-compose up -d --scale worker=N 
+    └── docker-compose up -d --scale worker=N
+
+SUBIR O SERVIÇO : 
+
+# Subir todos os serviços
+npm run docker:up
+
+# Ver logs
+npm run docker:logs
+
+# Ver status
+docker-compose -f docker/docker-compose.yml ps
