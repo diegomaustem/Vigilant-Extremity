@@ -23,3 +23,15 @@ npm run docker:logs
 
 # Ver status
 docker-compose -f docker/docker-compose.yml ps
+
+
+
+----
+
+
+   AUTO-SCALER                                                   │
+│                                                                                         │
+│  ✅ Monitora a fila 'monitor-checks' a cada 30 segundos                               │
+│  ✅ Calcula quantos workers são necessários                                           │
+│  ✅ Escala workers automaticamente                                                   │
+│  ✅ Reduz workers quando a demanda diminui 
