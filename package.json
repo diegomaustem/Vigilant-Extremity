@@ -7,7 +7,12 @@
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
     "start": "node dist/server.ts",
-    "knex": "NODE_OPTIONS='--import tsx' knex"
+    "knex": "NODE_OPTIONS='--import tsx' knex --knexfile src/database/knexfile.ts",
+    "auto-scaler": "node dist/auto-scaler.js",
+    "docker:up": "docker-compose -f docker/docker-compose.yml --env-file .env up -d",
+    "docker:down": "docker-compose -f docker/docker-compose.yml --env-file .env down",
+    "docker:logs": "docker-compose -f docker/docker-compose.yml --env-file .env logs -f",
+    "docker:scale": "docker-compose -f docker/docker-compose.yml --env-file .env up -d --scale worker="
   },
   "repository": {
     "type": "git",
