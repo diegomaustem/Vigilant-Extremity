@@ -1,6 +1,6 @@
-import config from '../../knexfile.js';
+import config from './knexfile.js';
 
-const environment = process.env.NODE_ENV || 'development';
-const dbConfig = config[environment || 'development'];
+const environment = process.env.NODE_ENV || 'production';
+const dbConfig = config[environment || 'production'];
 
 export default dbConfig;
