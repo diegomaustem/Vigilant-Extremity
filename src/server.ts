@@ -16,13 +16,18 @@ async function startServer() {
     await queueService.connect();
     await monitorCheckConsumer.start();
 
-    monitorSchedulerJob.start();
+    // Executa work 1, que faz as funções de publicar e consumir do rabbit
+    if (process.env.RUN_SCHEDULER === 'true') {
+      monitorSchedulerJob.start();
+      console.log(chalk.green('Scheduler iniciado - Worker 1'));
+    } else {
+      console.log(chalk.gray(`Scheduler desativado (Worker ${process.env.WORKER_ID || '?'})`));
+    }
 
     app.listen(PORT, () => {
       console.log(chalk.green(`Servidor rodando na porta ${PORT}`));
-      console.log(chalk.green('RabbitMQ conectado.'));
-      console.log(chalk.green('Consumer iniciado.'));
-      console.log(chalk.green('Scheduler iniciado.'));
+      console.log(chalk.green(`Worker ID: ${process.env.WORKER_ID || '?'}`));
+      console.log(chalk.green(`Scheduler: ${process.env.RUN_SCHEDULER === 'true' ? 'ATIVO' : 'DESATIVADO'}`));
     });
 
   } catch (error) {
