@@ -35,11 +35,15 @@
 
 
 # 🚀 SUBIR APLICAÇÃO 
-1. Subir todos os serviços
+
+1. Construir containers 
+docker-compose -f docker/docker-compose.yml --env-file .env build --no-cache
+
+2. Subir todos os serviços
 npm run docker:up
 
 # 📋 VER LOGS
-2. npm run docker:logs
+3. npm run docker:logs
 
 # ⏳ VER STATUS
-3. docker-compose -f docker/docker-compose.yml ps
+4. docker-compose -f docker/docker-compose.yml ps
